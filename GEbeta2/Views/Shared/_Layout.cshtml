@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>GE - Beta Golden Eagle</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet">
+    <link rel="stylesheet" href="@Url.Content("font-awesome/css/font-awesome.min.css")">
+
+
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="@Url.Content("http://cdn.oesmith.co.uk/morris-0.4.3.min.css")">
+
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="~/Home/Index">Golden Eagle</a>
+            </div>
+
+            <!-- Här ska alla länkarna vara, eventuellt en toggleknapp också. Denna som gör collapse -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <!-- Länkarna på vänster nav-bar, tagit bort class="active" på första länken -->
+                    <li><a href="~/Home/Index"><i class="fa fa-dashboard"></i> Firstpage</a></li>
+                    <li><a href="~/List/Index"><i class="fa fa-bar-chart-o"></i> Listor</a></li>
+                    <li><a href="tables.html"><i class="fa fa-table"></i> Tabeller</a></li>
+                    <li><a href="forms.html"><i class="fa fa-edit"></i> Hipphura</a></li>
+                    <li><a href="typography.html"><i class="fa fa-font"></i> Malins grejer</a></li>
+                    <li><a href="bootstrap-elements.html"><i class="fa fa-desktop"></i> Admin kanske</a></li>
+                    <li><a href="bootstrap-grid.html"><i class="fa fa-wrench"></i> Inställingar</a></li>
+                    <li><a href="blank-page.html"><i class="fa fa-file"></i> Blank Page</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Dropdown Item</a></li>
+                            <li><a href="#">Another Item</a></li>
+                            <li><a href="#">Third Item</a></li>
+                            <li><a href="#">Last Item</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Här börjar höger länkarna, User, message och notifications. Dessa bör bytas ut till något snyggare -->
+                <ul class="nav navbar-nav navbar-right navbar-user">
+                    <li class="dropdown messages-dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span class="badge">7</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">7 New Messages</li>
+                            <li class="message-preview">
+                                <a href="#">
+                                    <span class="avatar"><img src="http://placehold.it/50x50"></span>
+                                    <span class="name">Calle:</span>
+                                    <span class="message">Tjenare, jobbar övertid...</span>
+                                    <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="message-preview">
+                                <a href="#">
+                                    <span class="avatar"><img src="http://placehold.it/50x50"></span>
+                                    <span class="name">Robert:</span>
+                                    <span class="message">Hey there, I wanted to ask you something...</span>
+                                    <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="message-preview">
+                                <a href="#">
+                                    <span class="avatar"><img src="http://placehold.it/50x50"></span>
+                                    <span class="name">Malin:</span>
+                                    <span class="message">Pingviner är coola...</span>
+                                    <span class="time"><i class="fa fa-clock-o"></i> 4:34 PM</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#">View Inbox <span class="badge">7</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown alerts-dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> Alerts <span class="badge">3</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Default <span class="label label-default">Default</span></a></li>
+                            <li><a href="#">Primary <span class="label label-primary">Primary</span></a></li>
+                            <li><a href="#">Success <span class="label label-success">Success</span></a></li>
+                            <li><a href="#">Info <span class="label label-info">Info</span></a></li>
+                            <li><a href="#">Warning <span class="label label-warning">Warning</span></a></li>
+                            <li><a href="#">Danger <span class="label label-danger">Danger</span></a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">View All</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown user-dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i> Inbox <span class="badge">7</span></a></li>
+                            <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+
+        <div class="container-fluid body-content">
+            @RenderBody()
+            <hr />
+        </div><!-- /#wrapper -->
+        <footer>
+            <center><p>&copy; @DateTime.Now.Year - Team Awesome</p></center>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+
+    <!-- Page Specific Plugins -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+    <script src="~/Scripts/morris/chart-data-morris.js"></script>    
+    <script src="~/Scripts/tablesorter/jquery.tablesorter.js"></script>
+    <script src="~/Scripts/tablesorter/tables.js"></script>
+</body>
+</html>
